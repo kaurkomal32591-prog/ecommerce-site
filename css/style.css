@@ -90,5 +90,13 @@ grid-template-columns:1fr;
 }
 
 }
+.product:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+button:hover{
+  background:#555;
+}
+
 
 
