@@ -64,7 +64,8 @@ width:100%;
 
 .product-detail img{
   width: 300px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
+  display: block;
 }
 button{
 background:black;
@@ -89,4 +90,5 @@ grid-template-columns:1fr;
 }
 
 }
+
 
