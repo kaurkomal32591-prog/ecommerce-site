@@ -94,9 +94,9 @@ grid-template-columns:1fr;
   transform: scale(1.05);
   transition: 0.3s;
 }
+
 button:hover{
   background:#555;
 }
-
 
 
