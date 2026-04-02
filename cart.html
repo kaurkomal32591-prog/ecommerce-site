@@ -1,27 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<title>Cart</title>
-<link rel="stylesheet" href="css/style.css">
+  <head>
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
-<body onload="loadCart()">
+  <body onload="loadCart()">
+    <nav>
+      <h1>MyShop</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
 
-<nav>
-<h1><a href="index.html">MyShop</a></h1>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="cart.html">Cart</a></li>
-</ul>
-</nav>
+    <h2 class="title">Your Cart</h2>
 
-<h2 class="title">Your Cart</h2>
-
-<div id="cart-items"></div>
-
-<script src="js/script.js"></script>
-
+    <div id="cart-items"></div>
 </body>
-
 </html>
