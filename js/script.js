@@ -1,53 +1,43 @@
-function addToCart(name, price){
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({
+    name: name,
+    price: price
+  });
 
-cart.push({
-name:name,
-price:price
-});
+  localStorage.setItem("cart", JSON.stringify(cart));
 
-localStorage.setItem("cart", JSON.stringify(cart));
-
-alert("Product added to cart");
-
+  alert("Product added to cart");
 }
+
 // Load cart items
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function loadCart(){
+  let container = document.getElementById("cart-items");
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!container) return;
 
-let container = document.getElementById("cart-items");
+  container.innerHTML = "";
 
-if(!container) return;
-
-container.innerHTML="";
-
-cart.forEach((item,index)=>{
-
-container.innerHTML += `
-<div>
-${item.name} - $${item.price}
-<button onclick="removeItem(${index})">Remove</button>
-</div>
-`;
-
-});
-
+  cart.forEach((item, index) => {
+    container.innerHTML += `
+      <div>
+        ${item.name} - $${item.price}
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+  });
 }
-
 
 // Remove item from cart
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function removeItem(index){
+  cart.splice(index, 1);
 
-let cart = JSON.parse(localStorage.getItem("cart"));
+  localStorage.setItem("cart", JSON.stringify(cart));
 
-cart.splice(index,1);
-
-localStorage.setItem("cart", JSON.stringify(cart));
-
-loadCart();
-
+  loadCart();
 }
